@@ -49,9 +49,22 @@ const app = new Vue({
     },
     watch: {
       specialRequests: function(newRequests, oldRequests) {
-    if (newRequests.toLowerCase().includes('meet and greet') || newRequests.toLowerCase().includes('meet-and-greet')) {
-      this.ticketType = 'vip';
-    }
+        if (newRequests.toLowerCase().includes('meet and greet') || 
+            newRequests.toLowerCase().includes('meet-and-greet')) {
+          this.ticketType = 'vip';
+        }
+      }
+    },
+    methods: {
+        resetFields: function() {
+    this.firstName = '';
+    this.lastName = '';
+    this.email = '';
+    this.ticketQuantity = 1;
+    this.ticketType = 'general';
+    this.referrals = [];
+    this.specialRequests = '';
+    this.purchaseAgreementSigned = false;
   }
     }
   });
