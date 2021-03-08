@@ -11,16 +11,24 @@ const app = new Vue({
       purchaseAgreementSigned: false
     },
     computed: {
-      submitButtonStyles: function() {
-    if (this.formIsValid) {
+      invalidEmailStyles: function() {
+    if (this.email && !this.emailIsValid) {
       return {
-        'background-color': '#4c7ef3',
-        cursor: 'pointer'
+        'background-color': '#ffeded',
+        'border-color': '#da5252'
+      }
+    }
+  },
+      touchedEmailStyles: function() {
+    if (this.email) {
+      return {
+        'border-color': '#bdbcbc',
+        'border-width': '2px'
       }
     } else {
       return {
-        'background-color': 'gray',
-        cursor: 'default'
+        'border-color': '#e0e0e0',
+        'border-width': '2px'
       }
     }
   },
@@ -59,8 +67,24 @@ const app = new Vue({
   
         return this.ticketQuantity + ' ' + readableTicketType + ' ' + ticketPluralization;
       },
+      emailIsValid: function() {
+        return this.email.includes('@');
+      },
       formIsValid: function() {
-        return this.firstName && this.lastName && this.email && this.purchaseAgreementSigned;
+        return this.firstName && this.lastName && this.emailIsValid && this.purchaseAgreementSigned;
+      },
+      submitButtonStyles: function() {
+        if (this.formIsValid) {
+          return {
+            'background-color': '#4c7ef3',
+            cursor: 'pointer'
+          }
+        } else {
+          return {
+            'background-color': 'gray',
+            cursor: 'default'
+          }
+        }
       }
     },
     watch: {
