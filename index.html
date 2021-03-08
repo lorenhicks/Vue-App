@@ -15,27 +15,34 @@
       <img class="logo" src="https://content.codecademy.com/courses/vue-instances/ticket_logo.svg" alt="logo">
       <h1>TICKETBOX</h1>
     </header>
+    
+    <!-- Developer Pane -->
+    <div id="developer-pane">
+      <h2>Developer Pane</h2>
+      <div><em>Ticket Type</em>: <span>{{ ticketType }}</span></div>
+    </div>
+    
     <form>
       <div class="form-row">
         <div class="form-field">
           <label for="first-name">First Name</label>
-          <input type="text" id="first-name" />
+          <input type="text" id="first-name" v-model="firstName" />
         </div>
         <div class="form-field">
           <label for="last-name">Last Name</label>
-          <input type="text" id="last-name" />
+          <input type="text" id="last-name" v-model="lastName" />
         </div>
       </div>
       <div class="form-row">
         <div class="form-field">
           <label for="email">Email</label>
-          <input type="text" id="email" />
+          <input type="text" id="email" v-model="email" />
         </div>
       </div>
       <div class="form-row">
         <div class="form-field">
           <label for="ticket-quantity">Ticket Quantity</label>
-          <select id="ticket-quantity">
+          <select id="ticket-quantity" v-model="ticketQuantity">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -72,20 +79,20 @@
         </fieldset>
       </div>
       <div class="form-row vertical">
-        <label for="requests">Special Requests</label>
-        <textarea id="requests" ></textarea>
+        <label for="requests">Special requests</label>
+        <textarea id="requests" v-model="specialRequests"></textarea>
       </div>
       <div class="form-row vertical agreement checkbox">
         <fieldset>
           <legend>Purchase Agreement</legend>
           <p>I, {{ fullName }}, wish to buy {{ ticketDescription }}. I understand that all ticket sales are final.</p>
-          <input type="checkbox" name="agreement" id="agree">
+          <input type="checkbox" name="agreement" id="agree" />
           <label for="agree">I Agree</label>
         </fieldset>
       </div>
       <div class="form-row vertical">
         <label for="signature">Signature</label>
-        <input id="signature" class="signature" />
+        <input id="signature" class="signature" v-model="fullName" />
       </div>
       <div>
         <button type="reset" class="reset">Reset</button>
