@@ -11,18 +11,17 @@ const app = new Vue({
       purchaseAgreementSigned: false
     },
     computed: {
-      submitButtonCursor: function() {
+      submitButtonStyles: function() {
     if (this.formIsValid) {
-      return 'pointer';
+      return {
+        'background-color': '#4c7ef3',
+        cursor: 'pointer'
+      }
     } else {
-      return 'default';
-    }
-  },
-      submitButtonColor: function() {
-    if (this.formIsValid) {
-      return '#4c7ef3';
-    } else {
-      return 'gray';
+      return {
+        'background-color': 'gray',
+        cursor: 'default'
+      }
     }
   },
       fullName: {
