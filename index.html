@@ -15,7 +15,7 @@
       <img class="logo" src="https://content.codecademy.com/courses/vue-instances/ticket_logo.svg" alt="logo">
       <h1>TICKETBOX</h1>
     </header>
-    <form v-on:reset="resetFields" v-on:submit="submitForm" >
+    <form v-on:reset="resetFields" v-on:submit.prevent="submitForm" >
       <div class="form-row">
         <div class="form-field">
           <label for="first-name">First Name</label>
