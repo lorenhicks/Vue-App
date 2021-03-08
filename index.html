@@ -19,7 +19,7 @@
     <!-- Developer Pane -->
     <div id="developer-pane">
       <h2>Developer Pane</h2>
-      <div><em>Ticket Type</em>: <span>{{ ticketType }}</span></div>
+      <div><em>Referrals</em>: <span>{{ referrals }}</span></div>
     </div>
     
     <form>
@@ -52,7 +52,7 @@
         <div class="form-field">
           <legend>Ticket Type</legend>
           <div>
-            <input type="radio" id="general" value="general" v-model="ticketType" >
+            <input type="radio" id="general" value="general" v-model="ticketType">
             <label for="general">General Admission</label>
           </div>
           <div>
@@ -65,15 +65,15 @@
         <fieldset>
           <legend>How did you hear about this event?</legend>
           <div>
-            <input type="checkbox" id="friend" value="friend">
+            <input type="checkbox" id="friend" value="friend" v-model="referrals">
             <label for="friend">Friend</label>
           </div>
           <div>
-            <input type="checkbox" id="publication" value="publication">
+            <input type="checkbox" id="publication" value="publication"  v-model="referrals">
             <label for="publication">Publication</label>
           </div>
           <div>
-            <input type="checkbox" id="social-media" value="social">
+            <input type="checkbox" id="social-media" value="social"  v-model="referrals">
             <label for="social-media">Social Media</label>
           </div>
         </fieldset>
