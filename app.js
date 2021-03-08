@@ -11,6 +11,20 @@ const app = new Vue({
       purchaseAgreementSigned: false
     },
     computed: {
+      submitButtonCursor: function() {
+    if (this.formIsValid) {
+      return 'pointer';
+    } else {
+      return 'default';
+    }
+  },
+      submitButtonColor: function() {
+    if (this.formIsValid) {
+      return '#4c7ef3';
+    } else {
+      return 'gray';
+    }
+  },
       fullName: {
         get: function() {
           if (this.firstName && this.lastName) {
