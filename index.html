@@ -15,14 +15,7 @@
       <img class="logo" src="https://content.codecademy.com/courses/vue-instances/ticket_logo.svg" alt="logo">
       <h1>TICKETBOX</h1>
     </header>
-    
-    <!-- Developer Pane -->
-    <div id="developer-pane">
-      <h2>Developer Pane</h2>
-      <div><em>Purchase Agreement Signed</em>: <span>{{ purchaseAgreementSigned }}</span></div>
-    </div>
-    
-    <form>
+    <form v-on:reset="resetFields" v-on:submit="submitForm" >
       <div class="form-row">
         <div class="form-field">
           <label for="first-name">First Name</label>
